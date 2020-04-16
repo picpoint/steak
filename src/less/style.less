@@ -1,0 +1,79 @@
+@import "smart-grid.less";
+@import "var.less";
+
+
+.reset();
+
+.wrapper {
+	.wrapper();
+}
+
+.body {
+	box-sizing: border-box;
+}
+
+
+// MIXIN BLOCK START
+.mixinpart {
+  fill: red;
+  opacity: 0;    
+  transition: @transition;
+  &:hover {
+    opacity: 0.3;
+    transition: @transition;
+    cursor: pointer;
+  }
+}
+
+// MIXIN BLOCK START
+
+
+
+.cstk {  
+  &__wrapper {
+    border: @border;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  &__blockcow {
+    border: @border;
+    display: flex;
+    position: relative;
+    width: 45%;
+    height: 60%;
+    svg {
+      position: absolute;      
+    }
+  }
+  &__partrib {    
+    .mixinpart();
+  }
+  &__partloin {    
+    .mixinpart();
+  }
+  &__partsirloin {    
+    .mixinpart();
+  }
+  &__partround {
+    .mixinpart();
+  }
+  &__partflank {
+    .mixinpart();
+  }
+  &__partshortplate {
+    .mixinpart();
+  }
+  &__partforeshank {
+    .mixinpart();
+  }
+  &__partbrisket {
+    .mixinpart();
+  }
+  &__partchuck {
+    .mixinpart();
+  }
+
+
+}
