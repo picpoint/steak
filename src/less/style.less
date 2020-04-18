@@ -33,17 +33,82 @@
   &__wrapper {
     //border: @border;
     display: flex;
-    justify-content: center;
+    flex-direction: column;        
     align-items: center;
-    background-image: url("../../dist/pict/bg.jpg");
+    background-image: url("../../dist/pict/bg.jpg");    
+    background-size: cover;
+    background-attachment: fixed;
     height: 100vh;
   }
-  &__blockcow {
+  &__blockmenu {
     //border: @border;
     display: flex;
+    justify-content: center;
+    height: 9%;
+    width: 100%;
+    background-color: @bckmenu;
+  }
+  &__menu {
+    //border: @border;
+    display: flex;
+    width: 60%;
+  }
+  &__blocklogo {
+    //border: @border;
+    display: flex;    
+    align-items: center;
+    width: 50%;    
+    a {
+      //border: @border;
+      display: flex;
+      justify-content: center;
+      height: 90%;
+      width: 100px;            
+      img {      
+        height: 100%;
+      }
+    }
+    
+  }
+  &__blocklist {
+    //border: @border;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;    
+    a {
+      //border: @border;
+      color: @colorlightgray;
+      text-decoration: none;
+      padding: 5px;      
+      transition: @transition;
+      &:nth-child(1) {
+        color: @coloryellow;
+      }
+      &:hover {
+        color: @coloryellow;
+        transition: @transition;        
+        text-decoration: underline;
+      }
+    }
+  }
+  &__blockcow {
+    border: @border;
+    display: flex;
+    width: 100%;
+    height: 91%;
+  }
+  &__dishes {
+    border: @border;
+    width: 50%;
+  }
+  &__cow {
+    border: @border;
+    display: flex;
     position: relative;
-    width: 45%;
-    height: 60%;
+    // width: 45%;
+    height: 72%;
+    margin-top: 150px;
     svg {
       position: absolute;      
     }
