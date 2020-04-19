@@ -25,6 +25,29 @@
   }
 }
 
+.mixinsides {
+  border: @border;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  height: 90%;
+  //background-color: rgba(0,0,0,1);
+  background-image: url("../../dist/pict/s.png");
+  //background-size: cover;
+  background-position: center;  
+  background-repeat: no-repeat;
+  background-size: 110%;
+  backface-visibility: hidden;
+  transition: @transition;
+  //box-shadow: 20px 20px 20px rgba(0,0,0,0.5), 0 30px 30px rgba(0,0,0,0.5);
+  span {
+    font-size: 2rem;
+  }
+}
+
 // MIXIN BLOCK START
 
 
@@ -100,7 +123,38 @@
   }
   &__blockdishes {
     border: @border;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
     width: 50%;
+    height: 100%;
+  }
+  &__card {
+    //border: @border;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    width: 60%;
+    height: 80%;
+    color: @coloryellow;
+    perspective: 1000px;
+  }
+  &__front {
+    .mixinsides();
+  }
+  &__back {
+    .mixinsides();
+    transform: rotateY(180deg);
+    background-image: url("../../dist/pict/s2.png");
+    //background-color: @colorgreen;
+  }
+
+  &__card:hover &__front {
+    transform: rotateY(180deg);
+  }
+  &__card:hover &__back {
+    transform: rotateY(360deg);
   }
   
   &__cow {
