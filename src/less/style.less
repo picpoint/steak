@@ -35,11 +35,11 @@
   width: 100%;
   height: 90%;
   //background-color: rgba(0,0,0,1);
-  background-image: url("../../dist/pict/s.png");
+  background-image: url("../../dist/pict/tree.png");
   //background-size: cover;
   background-position: center;  
   background-repeat: no-repeat;
-  background-size: 110%;
+  background-size: 100%;
   backface-visibility: hidden;
   transition: @transition;
   //box-shadow: 20px 20px 20px rgba(0,0,0,0.5), 0 30px 30px rgba(0,0,0,0.5);
@@ -119,7 +119,7 @@
     border: @border;
     display: flex;
     width: 100%;
-    height: 91%;
+    //height: 91%;
   }
   &__blockdishes {
     border: @border;
@@ -135,7 +135,7 @@
     justify-content: center;
     position: relative;
     align-items: center;
-    width: 60%;
+    width: 90%;
     height: 80%;
     color: @coloryellow;
     perspective: 1000px;
@@ -146,7 +146,7 @@
   &__back {
     .mixinsides();
     transform: rotateY(180deg);
-    background-image: url("../../dist/pict/s2.png");
+    background-image: url("../../dist/pict/tree.png");
     //background-color: @colorgreen;
   }
 
@@ -160,12 +160,17 @@
   &__cow {
     border: @border;
     display: flex;
+    align-content: center;
+    align-items: center;
     position: relative;
     // width: 45%;
-    height: 72%;
+    //height: 72%;
     margin-top: 150px;
     svg {
-      position: absolute;      
+      position: absolute;            
+    }
+    img {
+      align-self: center;
     }
   }
   &__partrib {    
