@@ -32,17 +32,17 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: 87%;
+  width: 100%;
   height: 100%;  
   background-image: url("../../dist/pict/t1.png");    
   background-repeat: no-repeat;  
   background-position: center;
-  background-size: 75% 100%;
+  background-size: 100% 100%;
   backface-visibility: hidden;
-  transition: @transition;
-  //box-shadow: 20px 20px 20px rgba(0,0,0,0.5), 0 30px 30px rgba(0,0,0,0.5);
-  span {
-    font-size: 2rem;
+  transition: @transition;  
+  span {    
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 1);
+    font-size: 2.2rem;    
   }
 }
 
@@ -121,9 +121,9 @@
     width: 100%;    
   }
   &__blockdishes {
-    //border: @border;
+    border: @border;
     display: flex;
-    //justify-content: center;    
+    justify-content: center;    
     align-items: center;
     width: 50%;
     height: 100%;
@@ -134,7 +134,7 @@
     justify-content: center;
     position: relative;
     align-items: center;
-    width: 100%;
+    width: 65%;
     height: 100%;
     color: @coloryellow;
     perspective: 1000px;
@@ -145,8 +145,7 @@
   &__back {
     .mixinsides();
     transform: rotateY(180deg);
-    background-image: url("../../dist/pict/t2.png");
-    //background-color: @colorgreen;
+    background-image: url("../../dist/pict/t2.png");    
   }
 
   &__card:hover &__front {
