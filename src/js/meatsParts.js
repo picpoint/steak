@@ -15,5 +15,21 @@ const back = document.querySelector('.cstk__back');
 
 
 partrib.addEventListener('click', () => {
-	
+  let elemfront = front.firstElementChild;
+  let elemback = back.firstElementChild;
+  front.removeChild(elemfront);
+  back.removeChild(elemback);
+
+  let h3 = document.createElement('h3');
+  h3.innerText = 'Рёбра';
+  h3.style.fontSize = '2rem';
+  h3.style.textShadow = '2px 4px 4px rgba(0, 0, 0, 1)';
+  front.appendChild(h3);       
+
+  let spanBack = document.createElement('span');
+  spanBack.innerText = 'Good chouse';
+  back.appendChild(spanBack);
+
+
 });
+
