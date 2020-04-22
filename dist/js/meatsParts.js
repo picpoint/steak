@@ -13,6 +13,18 @@ const back = document.querySelector('.cstk__back');
 
 
 
+class choosePart {
+  constructor(front, back) {
+    this.front = front;
+    this.back = back;
+  }
+
+  chooseMethod() {
+
+  }
+}
+
+
 
 partrib.addEventListener('click', (e) => {
   let elemfront = front.firstElementChild;
@@ -22,8 +34,7 @@ partrib.addEventListener('click', (e) => {
 
   front.style.flexDirection = 'column';  
   let h3 = document.createElement('h3');
-  let span = document.createElement('span');
-  //front.style.justifyContent = 'center';
+  let span = document.createElement('span');  
   h3.innerText = 'Рёбра';
   h3.style.fontSize = '2.5rem';  
   span.innerHTML = 'Ребрышки разрежьте так, чтобы на порцию приходилось по одному ребру. Если куски крупные и вы будете готовить мясо в духовке, можно предварительно отварить их в течение 15-30 минут. Я этого не делала. Положите мясо в соус, хорошо обмажьте каждый кусок и уберите в холодное место минимум на 30 минут для маринования.';
@@ -35,17 +46,12 @@ partrib.addEventListener('click', (e) => {
   front.appendChild(span);
 
 
-  // let spanBack = document.createElement('span');
-  // spanBack.innerText = 'Good chouse';
-  // back.appendChild(spanBack);  
-  //back.style.alignContent = 'center';
+  back.style.flexDirection = 'column';
   back.style.justifyContent = 'flex-end';
-
 
   let img1 = document.createElement('img');
   img1.style.width = '210px';
-  img1.style.height = '210px';  
-  //img1.style.border = '1px solid red';
+  img1.style.height = '210px';    
   img1.style.borderRadius = '50%';
   img1.style.alignSelf = 'flex-start';
   img1.style.margin = '0 0 30px 30px';
@@ -56,16 +62,14 @@ partrib.addEventListener('click', (e) => {
   let img2 = document.createElement('img');
   img2.style.width = '210px';
   img2.style.height = '210px';  
-  //img2.style.border = '1px solid red';
   img2.style.borderRadius = '50%';
   img2.style.alignSelf = 'flex-end';
   img2.style.margin = '0 30px 30px 0';
   img2.src="../pict/ribcoock.jpg";
   img2.style.boxShadow = '2px 4px 4px rgba(0, 0, 0, 1)';
-  back.appendChild(img2);
-  
-  
-  back.style.flexDirection = 'column';
+  back.appendChild(img2); 
 
 });
+
+
 
