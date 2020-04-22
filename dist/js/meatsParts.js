@@ -14,22 +14,58 @@ const back = document.querySelector('.cstk__back');
 
 
 
-partrib.addEventListener('click', () => {
+partrib.addEventListener('click', (e) => {
   let elemfront = front.firstElementChild;
   let elemback = back.firstElementChild;
   front.removeChild(elemfront);
   back.removeChild(elemback);
 
+  front.style.flexDirection = 'column';  
   let h3 = document.createElement('h3');
+  let span = document.createElement('span');
+  //front.style.justifyContent = 'center';
   h3.innerText = 'Рёбра';
-  h3.style.fontSize = '2rem';
+  h3.style.fontSize = '2.5rem';  
+  span.innerHTML = 'Ребрышки разрежьте так, чтобы на порцию приходилось по одному ребру. Если куски крупные и вы будете готовить мясо в духовке, можно предварительно отварить их в течение 15-30 минут. Я этого не делала. Положите мясо в соус, хорошо обмажьте каждый кусок и уберите в холодное место минимум на 30 минут для маринования.';
+  span.style.fontSize = '1.5rem';
+  span.style.width = '70%';
+  h3.style.marginTop = '30px';
   h3.style.textShadow = '2px 4px 4px rgba(0, 0, 0, 1)';
   front.appendChild(h3);       
+  front.appendChild(span);
 
-  let spanBack = document.createElement('span');
-  spanBack.innerText = 'Good chouse';
-  back.appendChild(spanBack);
 
+  // let spanBack = document.createElement('span');
+  // spanBack.innerText = 'Good chouse';
+  // back.appendChild(spanBack);  
+  //back.style.alignContent = 'center';
+  back.style.justifyContent = 'flex-end';
+
+
+  let img1 = document.createElement('img');
+  img1.style.width = '210px';
+  img1.style.height = '210px';  
+  //img1.style.border = '1px solid red';
+  img1.style.borderRadius = '50%';
+  img1.style.alignSelf = 'flex-start';
+  img1.style.margin = '0 0 30px 30px';
+  img1.src="../pict/rib.jpg";
+  img1.style.boxShadow = '2px 4px 4px rgba(0, 0, 0, 1)';
+  back.appendChild(img1);
+
+  let img2 = document.createElement('img');
+  img2.style.width = '210px';
+  img2.style.height = '210px';  
+  //img2.style.border = '1px solid red';
+  img2.style.borderRadius = '50%';
+  img2.style.alignSelf = 'flex-end';
+  img2.style.margin = '0 30px 30px 0';
+  img2.src="../pict/ribcoock.jpg";
+  img2.style.boxShadow = '2px 4px 4px rgba(0, 0, 0, 1)';
+  back.appendChild(img2);
+  
+  
+  back.style.flexDirection = 'column';
 
 });
 
