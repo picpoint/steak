@@ -29,6 +29,7 @@
   border: @border;
   border-radius: 15px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: absolute;
@@ -40,9 +41,15 @@
   background-size: 100% 100%;
   backface-visibility: hidden;
   transition: @transition;  
-  span {    
+  h3 {    
     text-shadow: 2px 4px 4px rgba(0, 0, 0, 1);
     font-size: 2.2rem;    
+  }
+  span {
+    width: 85%;    
+    font-size: 1.3rem;    
+    text-align: center;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 1);
   }
 }
 
@@ -141,6 +148,12 @@
   }
   &__front {
     .mixinsides();
+  }
+  &__frontdesc {
+    
+  }
+  &__frontdesc {
+
   }
   &__back {
     .mixinsides();

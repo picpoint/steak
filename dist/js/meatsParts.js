@@ -10,98 +10,57 @@ const partbrisket = document.querySelector('.cstk__partbrisket');
 const front = document.querySelector('.cstk__front');
 const back = document.querySelector('.cstk__back');
 const h3 = document.querySelector('.cstk__fronthdr');
+const span = document.querySelector('.cstk__frontdesc');
 
 
 
 
 class ChoosePart {
-  constructor(front, back, meatPart, src1, src2, h3, hdr) {
+  constructor(front, back, partMeat, h3, span, img1, img2) {
     this.front = front;
     this.back = back;
-    this.meatPart = meatPart;
-    this.src1 = src1;
-    this.src2 = src2;
+    this.partMeat = partMeat;
     this.h3 = h3;
-    this.hdr = hdr;
+    this.span = span;
+    this.img1 = img1;
+    this.img2 = img2;    
   }
 
   chooseMethod() {
-    this.meatPart.addEventListener('click', (e) => {
-      let elemfront = this.front.firstElementChild;
-      let elemback = this.back.firstElementChild;
-
-      console.log(typeof front);
-      
-    
-      this.front.removeChild(elemfront);
-      this.back.removeChild(elemback);
-          
-      this.front.style.flexDirection = 'column';        
-      let span = document.createElement('span');  
-      
-      this.h3.innerText = this.hdr;
-      this.h3.style.fontSize = '2.5rem';        
-      this.h3.style.marginTop = '30px';
-      this.h3.style.textShadow = '2px 4px 4px rgba(0, 0, 0, 1)';
-      span.innerText = 'Ребрышки разрежьте так, чтобы на порцию приходилось по одному ребру. Если куски крупные и вы будете готовить мясо в духовке, можно предварительно отварить их в течение 15-30 минут.';
-      span.style.fontSize = '1.5rem';
-      span.style.width = '70%';                  
-      this.front.appendChild(span);
-    
-    
-      this.back.style.flexDirection = 'column';
-      this.back.style.justifyContent = 'flex-end';
-    
-      let img1 = document.createElement('img');
-      img1.style.width = '210px';
-      img1.style.height = '210px';    
-      img1.style.borderRadius = '50%';
-      img1.style.alignSelf = 'flex-start';
-      img1.style.margin = '0 0 30px 30px';
-      img1.src = "../pict/" + this.src1;
-      img1.style.boxShadow = '2px 4px 4px rgba(0, 0, 0, 1)';
-      this.back.appendChild(img1);
-    
-      let img2 = document.createElement('img');
-      img2.style.width = '210px';
-      img2.style.height = '210px';  
-      img2.style.borderRadius = '50%';
-      img2.style.alignSelf = 'flex-end';
-      img2.style.margin = '0 30px 30px 0';
-      img2.src = "../pict/" + this.src2;
-      img2.style.boxShadow = '2px 4px 4px rgba(0, 0, 0, 1)';
-      this.back.appendChild(img2);     
-    });        
-
+    this.partMeat.addEventListener('click', () => {
+      this.h3.innerText = 'Рёбра';
+      this.span.innerText = 'Ребрышки разрежьте так, чтобы на порцию приходилось по одному ребру. Если куски крупные и вы будете готовить мясо в духовке, можно предварительно отварить их в течение 15-30 минут.';
+    });
   }
-
-
+  
 }
 
 
-let rib = new ChoosePart(front, back, partrib, 'rib.jpg', 'ribcoock.jpg', h3, 'Рёбра');
+
+
+let rib = new ChoosePart(front, back, partrib, h3, span, 'rib.jpg', 'ribcoock.jpg');
 rib.chooseMethod();
 
-let chuck = new ChoosePart(front, back, partchuck, 'chuck.jpg', 'chuckcoock.jpg', h3, 'Грудинка');
+let chuck = new ChoosePart(front, back, partchuck, h3, span, 'chuck.jpg', 'chuckcoock.jpg');
 chuck.chooseMethod();
 
-let loin = new ChoosePart(front, back, partloin, 'shortlion.jpg', 'shortlioncoock.jpg', h3, 'Короткое филе');
+let loin = new ChoosePart(front, back, partloin, h3, span, 'shortlion.jpg', 'shortlioncoock.jpg');
 loin.chooseMethod();
 
-let sirloin = new ChoosePart(front, back, partsirloin, 'sirlion.jpg', 'sirlioncoock.jpg', h3, 'Филе');
+let sirloin = new ChoosePart(front, back, partsirloin, h3, span, 'sirlion.jpg', 'sirlioncoock.jpg');
 sirloin.chooseMethod();
 
-let round = new ChoosePart(front, back, partround, 'round.jpg', 'roundcoock.jpg', h3, 'Бедро');
+let round = new ChoosePart(front, back, partround, h3, span, 'round.jpg', 'roundcoock.jpg');
 round.chooseMethod();
 
-let flank = new ChoosePart(front, back, partflank, 'flank.jpg', 'flankcoock.jpg', h3, 'Пашина');
+let flank = new ChoosePart(front, back, partflank, h3, span, 'flank.jpg', 'flankcoock.jpg');
 flank.chooseMethod();
 
-let shortplate = new ChoosePart(front, back, partshortplate, 'shortplate.jpg', 'shortplatecoock.jpg', h3, 'Брюшина');
+let shortplate = new ChoosePart(front, back, partshortplate, h3, span, 'shortplate.jpg', 'shortplatecoock.jpg');
 shortplate.chooseMethod();
 
-let foreshank = new ChoosePart(front, back, partforeshank, 'foreshank.jpg', 'foreshankcoock.jpg', h3, 'Голяшка');
+let foreshank = new ChoosePart(front, back, partforeshank, h3, span, 'foreshank.jpg', 'foreshankcoock.jpg');
 foreshank.chooseMethod();
 
-let brisket = new ChoosePart(front, back, partbrisket, 'brisket.jpg', 'brisketcoock.jpg', h3, 'Грудина');
+let brisket = new ChoosePart(front, back, partbrisket, h3, span, 'brisket.jpg', 'brisketcoock.jpg');
 brisket.chooseMethod();
