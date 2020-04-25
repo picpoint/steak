@@ -28,8 +28,34 @@ class ChoosePart {
 
   chooseMethod() {
     this.partMeat.addEventListener('click', () => {
-      this.h3.innerText = 'Рёбра';
-      this.span.innerText = 'Ребрышки разрежьте так, чтобы на порцию приходилось по одному ребру. Если куски крупные и вы будете готовить мясо в духовке, можно предварительно отварить их в течение 15-30 минут.';
+      let part;
+      let recipe;
+      if(this.partMeat == partrib) {
+        part = 'Рёбра';
+        recipe = 'Ребрышки разрежьте так, чтобы на порцию приходилось по одному ребру. Если куски крупные и вы будете готовить мясо в духовке, можно предварительно отварить их в течение 15-30 минут.';
+      } else if(this.partMeat == partchuck) {
+        part = 'Лопатка';
+        recipe = 'Смазать мясо растительным маслом, сбрызнуть белым винным уксусом. Посолить и поперчить со всех сторон.';
+      } else if(this.partMeat == partloin) {
+        part = 'Короткое филе';
+        recipe = 'Смажьте филе маслом и посыпьте приправами, чтобы покрыть его равномерно со всех сторон. Выложите в форму для запекания и готовьте 20–25 минут при температуре 200 °С.';
+      } else if(this.partMeat == partsirloin) {
+        part = 'Филе';
+        recipe = ' Сложите в миску и добавьте измельчённые чеснок и лук. Посолите, поперчите, посыпьте паприкой и базиликом, выложите в форму вместе с маринадом. Запекайте  при температуре 200 °С примерно 45 минут.';
+      } else if(this.partMeat == partround) {
+        part = 'Бедро';
+      } else if(this.partMeat == partflank) {
+        part = 'Пашина';
+      } else if(this.partMeat == partshortplate) {
+        part = 'Брюшина';
+      } else if(this.partMeat == partforeshank) {
+        part = 'Голяшка';
+      } else if(this.partMeat == partbrisket) {
+        part = 'Грудина';
+      }
+
+      this.h3.innerText = part;
+      this.span.innerText = recipe;
     });
   }
   
