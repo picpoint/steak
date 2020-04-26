@@ -1,26 +1,24 @@
-const partrib = document.querySelector('.cstk__partrib');
-const partchuck = document.querySelector('.cstk__partchuck');
-const partloin = document.querySelector('.cstk__partloin');
-const partsirloin = document.querySelector('.cstk__partsirloin');
-const partround = document.querySelector('.cstk__partround');
-const partflank = document.querySelector('.cstk__partflank');
-const partshortplate = document.querySelector('.cstk__partshortplate');
-const partforeshank = document.querySelector('.cstk__partforeshank');
-const partbrisket = document.querySelector('.cstk__partbrisket');
-const front = document.querySelector('.cstk__front');
-const back = document.querySelector('.cstk__back');
-const backhdr = document.querySelector('.cstk__backhdr');
-const h3 = document.querySelector('.cstk__fronthdr');
-const span = document.querySelector('.cstk__frontdesc');
+const partrib = document.querySelector('.cstk__partrib');                                                 // область рёбра
+const partchuck = document.querySelector('.cstk__partchuck');                                             // область лопатка
+const partloin = document.querySelector('.cstk__partloin');                                               // область филе
+const partsirloin = document.querySelector('.cstk__partsirloin');                                         // область коротко филе
+const partround = document.querySelector('.cstk__partround');                                             // область бедро
+const partflank = document.querySelector('.cstk__partflank');                                             // область пашина
+const partshortplate = document.querySelector('.cstk__partshortplate');                                   // область брюшина
+const partforeshank = document.querySelector('.cstk__partforeshank');                                     // область голяшка
+const partbrisket = document.querySelector('.cstk__partbrisket');                                         // область грудина
+const front = document.querySelector('.cstk__front');                                                     // разделочная доска лицевая сторона 
+const back = document.querySelector('.cstk__back');                                                       // разделочная доска задняя сторона 
+const h3 = document.querySelector('.cstk__fronthdr');                                                     // текст заголовка мясной части
+const span = document.querySelector('.cstk__frontdesc');                                                  // текст рецепта
 
 
 
 
-class ChoosePart {
-  constructor(front, back, backhdr, partMeat, h3, span, img1, img2) {
+class ChoosePart {                                                                                        // класс для выбора части
+  constructor(front, back, partMeat, h3, span, img1, img2) {
     this.front = front;
-    this.back = back;
-    this.backhdr = backhdr;
+    this.back = back;    
     this.partMeat = partMeat;
     this.h3 = h3;
     this.span = span;
@@ -29,16 +27,16 @@ class ChoosePart {
   }
 
   chooseMethod() {
-    this.partMeat.addEventListener('click', () => {
+    this.partMeat.addEventListener('click', () => {                                                       // вешаем событие по клику
       let part;
       let recipe;
       
-      let pict1 = this.back.firstElementChild;
-      let pict2 = this.back.lastElementChild;            
+      let pict1 = this.back.firstElementChild;                                                            // картинка сырого мяса
+      let pict2 = this.back.lastElementChild;                                                             // картинка готового
       pict1.src = '../pict/' + this.img1;
       pict2.src = '../pict/' + this.img2;      
 
-      if(this.partMeat == partrib) {
+      if(this.partMeat == partrib) {                                                                      // если выбран тот или иной кусок, подставляем нужную инфу
         part = 'Рёбра';
         recipe = 'Ребрышки разрежьте так, чтобы на порцию приходилось по одному ребру. Если куски крупные и вы будете готовить мясо в духовке, можно предварительно отварить их в течение 15-30 минут.';
       } else if(this.partMeat == partchuck) {
@@ -67,8 +65,8 @@ class ChoosePart {
         recipe = 'Разогреваем духовку и отправляем в нее запекаться грудинку при температуре примерно 200 градусах. Расчет времени составляет один час на один кг. мяса. Если Ваш кусок грудинки весит 2 кг, соответственно, засекаем два часа времени.';
       }
 
-      this.h3.innerText = part;
-      this.span.innerText = recipe;
+      this.h3.innerText = part;                                                                              // присваиваем заголовку нужную текстовую инфу
+      this.span.innerText = recipe;                                                                          // присваиваем спану нужный рецепт
     });
   }
   
@@ -77,29 +75,29 @@ class ChoosePart {
 
 
 
-let rib = new ChoosePart(front, back, backhdr, partrib, h3, span, 'rib.jpg', 'ribcoock.jpg');
+let rib = new ChoosePart(front, back, partrib, h3, span, 'rib.jpg', 'ribcoock.jpg');
 rib.chooseMethod();
 
-let chuck = new ChoosePart(front, back, backhdr, partchuck, h3, span, 'chuck.jpg', 'chuckcoock.jpg');
+let chuck = new ChoosePart(front, back, partchuck, h3, span, 'chuck.jpg', 'chuckcoock.jpg');
 chuck.chooseMethod();
 
-let loin = new ChoosePart(front, back, backhdr, partloin, h3, span, 'shortlion.jpg', 'shortlioncoock.jpg');
+let loin = new ChoosePart(front, back, partloin, h3, span, 'shortlion.jpg', 'shortlioncoock.jpg');
 loin.chooseMethod();
 
-let sirloin = new ChoosePart(front, back, backhdr, partsirloin, h3, span, 'sirlion.jpg', 'sirlioncoock.jpg');
+let sirloin = new ChoosePart(front, back, partsirloin, h3, span, 'sirlion.jpg', 'sirlioncoock.jpg');
 sirloin.chooseMethod();
 
-let round = new ChoosePart(front, back, backhdr, partround, h3, span, 'round.jpg', 'roundcoock.jpg');
+let round = new ChoosePart(front, back, partround, h3, span, 'round.jpg', 'roundcoock.jpg');
 round.chooseMethod();
 
-let flank = new ChoosePart(front, back, backhdr, partflank, h3, span, 'flank.jpg', 'flankcoock.jpg');
+let flank = new ChoosePart(front, back, partflank, h3, span, 'flank.jpg', 'flankcoock.jpg');
 flank.chooseMethod();
 
-let shortplate = new ChoosePart(front, back, backhdr, partshortplate, h3, span, 'shortplate.jpg', 'shortplatecoock.jpg');
+let shortplate = new ChoosePart(front, back, partshortplate, h3, span, 'shortplate.jpg', 'shortplatecoock.jpg');
 shortplate.chooseMethod();
 
-let foreshank = new ChoosePart(front, back, backhdr, partforeshank, h3, span, 'foreshank.jpg', 'foreshankcoock.jpg');
+let foreshank = new ChoosePart(front, back, partforeshank, h3, span, 'foreshank.jpg', 'foreshankcoock.jpg');
 foreshank.chooseMethod();
 
-let brisket = new ChoosePart(front, back, backhdr, partbrisket, h3, span, 'brisket.jpg', 'brisketcoock.jpg');
+let brisket = new ChoosePart(front, back, partbrisket, h3, span, 'brisket.jpg', 'brisketcoock.jpg');
 brisket.chooseMethod();
